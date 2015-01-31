@@ -178,7 +178,7 @@
 			</plugin> -->
 
 			<!-- 部署到指定的目录 -->
-			<plugin>
+	<!-- 		<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
 				<version>1.0</version>
@@ -192,7 +192,7 @@
 						<home>D:\java\apache-tomcat-6.0.43</home>
 					</configuration>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
