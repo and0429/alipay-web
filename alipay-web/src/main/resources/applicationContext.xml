@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 						http://www.springframework.org/schema/beans/spring-beans.xsd 
+ 						http://cxf.apache.org/jaxws 
+						http://cxf.apache.org/schemas/jaxws.xsd        
+						http://www.springframework.org/schema/util 
+        				http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<import resource="META-INF/cxf/cxf.xml" />
+	<import resource="META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="META-INF/cxf/cxf-servlet.xml" />
+
+	<import resource="beans.xml" />
+
+	<bean id="alipayPayServiceImpl" class="com.collect.alipay.service.impl.AlipayPayServiceImpl">
+		<property name="parseResponseService" ref="parseResponseService" />
+		<property name="alipayConfigs" ref="alipayConfigs" />
+		<property name="alipayLogService" ref="alipayLogService" />
+	</bean>
+
+	<util:map id="alipayConfigs" map-class="java.util.HashMap">
+		<entry key="101" value-ref="alipayConfig" />
+		<entry key="002" value-ref="alipayConfig1" />
+	</util:map>
+
+	<bean id="alipayConfig" class="com.collect.alipay.util.AlipayConfig">
+		<property name="partner" value="2088201564918363" />
+		<property name="key" value="wpge2p1bqqwgymrsk4m6v1sf2tv7wms8" />
+		<property name="charset" value="utf-8" />
+		<property name="signType" value="MD5" />
+		<property name="getWay" value="https://mapi.alipay.com/gateway.do?"></property>
+		<property name="extendParam" value="{&quot;MACHINE_ID&quot;:&quot;&quot;,&quot;AGENT_ID&quot;:&quot;12092562a1&quot;,&quot;STORE_ID&quot;:&quot;&quot;,&quot;STORE_TYPE&quot;:&quot;&quot;}"></property>
+	</bean>
+
+	<bean id="alipayConfig1" class="com.collect.alipay.util.AlipayConfig">
+		<property name="partner" value="partner2" />
+		<property name="key" value="ddddddddddd" />
+		<property name="charset" value="utf-8" />
+		<property name="signType" value="MD5" />
+		<property name="getWay" value="https://mapi.alipay.com/gateway.do?"></property>
+	</bean>
+
+
+	<jaxws:endpoint id="AlipayPayService" implementor="#alipayPayServiceImpl" address="/AlipayPayService" />
+
+</beans> 
