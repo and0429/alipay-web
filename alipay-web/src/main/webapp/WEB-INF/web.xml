@@ -16,8 +16,18 @@
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
+	<filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>com.collect.alipay.web.LoginFilter</filter-class>
+	</filter>
+	
+	
 	<filter-mapping>
 		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
@@ -36,8 +46,8 @@
 		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
-	
+
+
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>*.do</url-pattern>
@@ -48,9 +58,9 @@
 	</servlet-mapping>
 
 
-	
-	
-	
-	
+
+
+
+
 
 </web-app>

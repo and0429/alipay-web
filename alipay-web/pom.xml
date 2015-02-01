@@ -117,7 +117,12 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -158,7 +163,7 @@
 			</plugin>
 
 			<!-- 每次拷贝部署到指定的目录 -->
-<!-- 			<plugin>
+			<plugin>
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
 				<version>1.0</version>
@@ -175,24 +180,10 @@
 						</properties>
 					</configuration>
 				</configuration>
-			</plugin> -->
+			</plugin>
 
 			<!-- 部署到指定的目录 -->
-	<!-- 		<plugin>
-				<groupId>org.codehaus.cargo</groupId>
-				<artifactId>cargo-maven2-plugin</artifactId>
-				<version>1.0</version>
-				<configuration>
-					<container>
-						<containerId>tomcat6x</containerId>
-						<home>D:\java\apache-tomcat-6.0.43</home>
-					</container>
-					<configuration>
-						<type>existing</type>
-						<home>D:\java\apache-tomcat-6.0.43</home>
-					</configuration>
-				</configuration>
-			</plugin> -->
+			<!-- <plugin> <groupId>org.codehaus.cargo</groupId> <artifactId>cargo-maven2-plugin</artifactId> <version>1.0</version> <configuration> <container> <containerId>tomcat6x</containerId> <home>D:\java\apache-tomcat-6.0.43</home> </container> <configuration> <type>existing</type> <home>D:\java\apache-tomcat-6.0.43</home> </configuration> </configuration> </plugin> -->
 		</plugins>
 	</build>
 </project>
