@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.collect.alipay.domain.User">
+
+	<!-- save a entity -->
+	<insert id="save" parameterType="Alilog">
+		insert into alipaylog (id_, oper_, operUser_, operDate_, operChannel_, remark_)
+		values (#{id}, #{oper}, #{operUser}, #{operDate}, #{operChannel}, #{remark})
+	</insert>
+
+	<!-- get entity by id -->
+	<select id="getById" parameterType="string" resultMap="alilog">
+		select * from alipaylog where id_ = #{id}
+	</select>
+
+
+	<resultMap type="Alilog" id="alilog">
+		<id column="id_" property="id" />
+		<result column="oper_" property="oper" />
+		<result column="operUser_" property="operUser" />
+		<result column="operDate_" property="operDate" />
+		<result column="operChannel_" property="operChannel" />
+		<result column="remark_" property="remark" />
+	</resultMap>
+</mapper>
