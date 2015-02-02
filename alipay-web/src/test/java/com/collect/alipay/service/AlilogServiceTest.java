@@ -49,8 +49,8 @@ public class AlilogServiceTest {
 
 	@Test
 	public void testGetById() {
-		Alilog log = alilogService.getById("1");
-		assertEquals("zhangkai", log.getOperUser());
+//		Alilog log = alilogService.getById("1");
+//		assertEquals("zhangkai", log.getOperUser());
 	}
 
 }
