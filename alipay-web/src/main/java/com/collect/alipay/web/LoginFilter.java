@@ -32,8 +32,6 @@ public class LoginFilter implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) response;
 		User user = (User) req.getSession().getAttribute("user");
 		String url = req.getRequestURL().toString();
-
-	System.out.println(user);	
 		
 		if (url.endsWith("index.jsp") || url.endsWith("/") || url.endsWith("login.do")) {
 			chain.doFilter(request, response);

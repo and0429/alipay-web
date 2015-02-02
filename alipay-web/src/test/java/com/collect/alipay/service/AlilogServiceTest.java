@@ -1,6 +1,6 @@
 package com.collect.alipay.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
@@ -50,7 +50,7 @@ public class AlilogServiceTest {
 	@Test
 	public void testGetById() {
 		Alilog log = alilogService.getById("1");
-		assertEquals("ss", log.getOperUser());
+		assertEquals("zhangkai", log.getOperUser());
 	}
 
 }

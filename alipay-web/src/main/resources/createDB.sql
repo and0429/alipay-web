@@ -7,7 +7,9 @@ create table alipayLog(
     oper_ int,
 	operUser_ varchar(16),
     operDate_ timestamp,
-    operChannel_ varchar(2)
+    operChannel_ varchar(2),
+    remark_ varchar(100)
+    
 )
 
 
