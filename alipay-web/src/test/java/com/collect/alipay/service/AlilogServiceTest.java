@@ -16,7 +16,7 @@ import com.collect.alipay.domain.Alilog;
 import com.collect.alipay.util.UUIDUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath:beans.xml" })
 public class AlilogServiceTest {
 
 	@Inject

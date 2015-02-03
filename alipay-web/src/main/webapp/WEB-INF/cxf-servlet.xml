@@ -3,15 +3,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
  						http://www.springframework.org/schema/beans/spring-beans.xsd 
  						http://cxf.apache.org/jaxws 
-						http://cxf.apache.org/schemas/jaxws.xsd        
+						http://cxf.apache.org/schemas/jaxws.xsd
 						http://www.springframework.org/schema/util 
         				http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<import resource="META-INF/cxf/cxf.xml" />
-	<import resource="META-INF/cxf/cxf-extension-soap.xml" />
-	<import resource="META-INF/cxf/cxf-servlet.xml" />
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<import resource="beans.xml" />
+	<jaxws:endpoint id="webservice" implementor="#alipayPayServiceImpl" address="/alipayPayService">
+		<jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:endpoint>
 
 	<bean id="alipayPayServiceImpl" class="com.collect.alipay.service.impl.AlipayPayServiceImpl">
 		<property name="parseResponseService" ref="parseResponseService" />
@@ -42,6 +49,6 @@
 	</bean>
 
 
-	<jaxws:endpoint id="AlipayPayService" implementor="#alipayPayServiceImpl" address="/AlipayPayService" />
+
 
 </beans> 

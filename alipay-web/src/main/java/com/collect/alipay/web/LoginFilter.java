@@ -33,7 +33,7 @@ public class LoginFilter implements Filter {
 		User user = (User) req.getSession().getAttribute("user");
 		String url = req.getRequestURL().toString();
 		
-		if (url.endsWith("index.jsp") || url.endsWith("/") || url.endsWith("login.do") || url.endsWith("/ws")) {
+		if (url.endsWith("index.jsp") || url.endsWith("/") || url.endsWith("login.do") || url.endsWith("Service")) {
 			chain.doFilter(request, response);
 		} else {
 			if (user == null) {
