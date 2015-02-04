@@ -196,7 +196,6 @@ public class ParseResponseServiceImpl implements ParseResponseService {
 			System.out.println(array);
 			precreateResponse.setBigPicArray(array);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return precreateResponse;

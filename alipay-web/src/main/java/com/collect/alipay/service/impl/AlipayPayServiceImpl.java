@@ -4,6 +4,9 @@ import java.util.Date;
 import java.util.Map;
 
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+import javax.xml.ws.BindingType;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -35,7 +38,9 @@ import com.collect.alipay.util.UUIDUtil;
  * @author xu
  *
  */
-@WebService(serviceName="alipayService", endpointInterface = "com.collect.alipay.service.AlipayPayService")
+@WebService(serviceName = "alipayService", targetNamespace = "http://www.alipay.com", endpointInterface = "com.collect.alipay.service.AlipayPayService")
+@SOAPBinding(style = Style.RPC)
+@BindingType(value = javax.xml.ws.soap.SOAPBinding.SOAP12HTTP_BINDING)
 public class AlipayPayServiceImpl implements AlipayPayService {
 
 	private static final Log logger = LogFactory.getLog(AlipayPayServiceImpl.class);
