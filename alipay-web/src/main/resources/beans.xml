@@ -14,6 +14,8 @@
 
 	<context:property-placeholder location="classpath:datasource.properties" />
 
+	<import resource="classpath:cxf-servlet.xml"/>
+
 	<!-- ==================================================== 数据连接相关 ====================================================== -->
 
 	<bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
