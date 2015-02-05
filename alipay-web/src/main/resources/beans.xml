@@ -53,6 +53,5 @@
 			<tx:method name="update*" propagation="REQUIRED" />
 		</tx:attributes>
 	</tx:advice>
-
-
+	
 </beans>
