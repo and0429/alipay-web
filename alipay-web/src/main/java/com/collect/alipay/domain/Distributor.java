@@ -3,12 +3,12 @@ package com.collect.alipay.domain;
 import java.io.Serializable;
 
 /**
- * 用户模型
+ * 分销商管理
  * 
  * @author zhangkai
  * 
  */
-public class User implements Serializable {
+public class Distributor implements Serializable {
 
 	/**
 	 * 
@@ -21,16 +21,12 @@ public class User implements Serializable {
 	private String id;
 
 	/**
-	 * 分销商Id
+	 * 名称
 	 */
-	private String distributorId;
-	/**
-	 * 用户名
-	 */
-	private String username;
+	private String name;
 
 	/**
-	 * 负责人姓名
+	 * 负责人
 	 */
 	private String manager;
 
@@ -52,12 +48,12 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getManager() {
@@ -66,14 +62,6 @@ public class User implements Serializable {
 
 	public void setManager(String manager) {
 		this.manager = manager;
-	}
-
-	public String getDistributorId() {
-		return distributorId;
-	}
-
-	public void setDistributorId(String distributorId) {
-		this.distributorId = distributorId;
 	}
 
 	public String getTel() {
@@ -91,5 +79,7 @@ public class User implements Serializable {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
+	
+	
 
 }
