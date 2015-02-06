@@ -25,21 +25,19 @@ public class AlilogServiceImpl implements AlilogService {
 	private AlilogDao alilogDao;
 
 	@Override
-	public int save(Alilog alilog) {
+	public void save(Alilog alilog) {
 		getLogger(this.getClass()).debug("add log... ... ...");
-		return alilogDao.save(alilog);
+		alilogDao.save(alilog);
 	}
 
 	@Override
-	public int delete(Serializable id) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void delete(Serializable id) {
+		alilogDao.delete(id);
 	}
 
 	@Override
-	public int update(Alilog t) {
-		// TODO Auto-generated method stub
-		return 0;
+	public void update(Alilog t) {
+		alilogDao.update(t);
 	}
 
 	@Override
@@ -49,7 +47,6 @@ public class AlilogServiceImpl implements AlilogService {
 
 	@Override
 	public List<Alilog> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return alilogDao.getAll();
 	}
 }

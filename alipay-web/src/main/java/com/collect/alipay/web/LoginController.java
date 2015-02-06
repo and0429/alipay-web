@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.collect.alipay.domain.User;
+import com.collect.alipay.domain.Login;
 
 /**
  * 用户相关的控制器
@@ -26,8 +26,8 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(Model model, User user) {
-		model.addAttribute("user", user);
+	public String login(Model model, Login login) {
+		model.addAttribute("user", login);
 		return "redirect:/user/users.do";
 	}
 

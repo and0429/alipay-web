@@ -6,7 +6,6 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -35,10 +34,6 @@ public class AlilogServiceTest {
 		ali.setOperDate(new Date());
 		ali.setOperUser("zhangkai");
 		ali.setRemark("test");
-
-		int result = alilogService.save(ali);
-
-		Logger.getLogger(this.getClass()).info(result + "============================================");
 
 		Alilog alifromdb = alilogService.getById(id);
 

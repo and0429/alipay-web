@@ -47,8 +47,8 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 	 * @see com.collect.alipay.dao.BaseDao#save(java.lang.Object)
 	 */
 	@Override
-	public int save(T t) {
-		return session.insert(clazz.getName() + ".save", t);
+	public void save(T t) {
+		session.insert(clazz.getName() + ".save", t);
 	}
 
 	/*
@@ -57,8 +57,8 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 	 * @see com.collect.alipay.dao.BaseDao#delete(java.io.Serializable)
 	 */
 	@Override
-	public int delete(Serializable id) {
-		return session.delete(clazz.getName() + ".delete", id);
+	public void delete(Serializable id) {
+		session.delete(clazz.getName() + ".delete", id);
 	}
 
 	/*
@@ -67,8 +67,8 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 	 * @see com.collect.alipay.dao.BaseDao#update(java.lang.Object)
 	 */
 	@Override
-	public int update(T t) {
-		return session.update(clazz.getName() + ".update", t);
+	public void update(T t) {
+		session.update(clazz.getName() + ".update", t);
 	}
 
 	/*

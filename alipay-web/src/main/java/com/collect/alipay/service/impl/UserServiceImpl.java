@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
 	 * @see com.collect.alipay.service.BaseService#save(java.lang.Object)
 	 */
 	@Override
-	public int save(User user) {
-		return userDao.save(user);
+	public void save(User user) {
+		userDao.save(user);
 	}
 
 	/*
@@ -38,8 +38,8 @@ public class UserServiceImpl implements UserService {
 	 * @see com.collect.alipay.service.BaseService#delete(java.io.Serializable)
 	 */
 	@Override
-	public int delete(Serializable id) {
-		return userDao.delete(id);
+	public void delete(Serializable id) {
+		userDao.delete(id);
 	}
 
 	/*
@@ -48,8 +48,8 @@ public class UserServiceImpl implements UserService {
 	 * @see com.collect.alipay.service.BaseService#update(java.lang.Object)
 	 */
 	@Override
-	public int update(User user) {
-		return userDao.update(user);
+	public void update(User user) {
+		userDao.update(user);
 	}
 
 	/*

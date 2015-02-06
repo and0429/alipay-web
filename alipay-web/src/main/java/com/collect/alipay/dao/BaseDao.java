@@ -19,7 +19,7 @@ public interface BaseDao<T> {
 	 *            要保存的实体
 	 * @return 影响行数
 	 */
-	int save(T t);
+	void save(T t);
 
 	/**
 	 * 根据Id删除实体
@@ -28,7 +28,7 @@ public interface BaseDao<T> {
 	 *            id
 	 * @return 影响的行数
 	 */
-	int delete(Serializable id);
+	void delete(Serializable id);
 
 	/**
 	 * 更新实体
@@ -37,7 +37,7 @@ public interface BaseDao<T> {
 	 *            待更新的实体
 	 * @return 影响的行数
 	 */
-	int update(T t);
+	void update(T t);
 
 	/**
 	 * 根据Id查询实体

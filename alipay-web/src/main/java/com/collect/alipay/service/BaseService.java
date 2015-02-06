@@ -16,27 +16,24 @@ public interface BaseService<T> {
 	 * 
 	 * @param t
 	 *            要保存的实体
-	 * @return 影响行数
 	 */
-	int save(T t);
+	void save(T t);
 
 	/**
 	 * 根据Id删除实体
 	 * 
 	 * @param id
 	 *            id
-	 * @return 影响的行数
 	 */
-	int delete(Serializable id);
+	void delete(Serializable id);
 
 	/**
 	 * 更新实体
 	 * 
 	 * @param t
 	 *            待更新的实体
-	 * @return 影响的行数
 	 */
-	int update(T t);
+	void update(T t);
 
 	/**
 	 * 根据Id查询实体
