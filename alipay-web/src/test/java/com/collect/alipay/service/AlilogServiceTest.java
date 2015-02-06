@@ -35,6 +35,9 @@ public class AlilogServiceTest {
 		ali.setOperUser("zhangkai");
 		ali.setRemark("test");
 
+		
+		alilogService.save(ali);
+		
 		Alilog alifromdb = alilogService.getById(id);
 
 		assertEquals(true, alifromdb != null);
