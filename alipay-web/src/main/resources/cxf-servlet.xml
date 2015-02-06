@@ -10,6 +10,7 @@
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
+	<!-- publish a web service -->
 	<jaxws:endpoint id="webservice" implementor="#alipayPayServiceImpl" address="/alipayPayService">
 		<jaxws:inInterceptors>
 			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
