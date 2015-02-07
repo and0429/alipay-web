@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.collect.alipay.domain.User;
 import com.collect.alipay.service.UserService;
+import com.collect.alipay.util.UUIDUtil;
 
 /**
  * 用户处理类
@@ -29,9 +30,7 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public Object users() {
-
 		return userService.getAll();
-
 	}
 
 	/**
@@ -42,6 +41,8 @@ public class UserController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public void add(User user) {
 
+		user.setId(UUIDUtil.randomUUID());
+			
 		userService.save(user);
 	}
 }
